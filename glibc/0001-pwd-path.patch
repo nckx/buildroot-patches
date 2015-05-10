@@ -1,0 +1,24 @@
+diff -Naur glibc-2.21/configure glibc-2.21-patched/configure
+--- glibc-2.21/configure	2015-02-06 07:40:18.000000000 +0100
++++ glibc-2.21/configure	2015-05-10 05:28:57.533525669 +0200
+@@ -3336,7 +3336,7 @@
+ fi
+ 
+ 
+-if test "`cd $srcdir; /bin/pwd`" = "`/bin/pwd`"; then
++if test "`cd $srcdir; pwd`" = "`pwd`"; then
+   as_fn_error $? "you must configure in a separate build directory" "$LINENO" 5
+ fi
+ 
+diff -Naur glibc-2.21/configure.ac glibc-2.21-patched/configure.ac
+--- glibc-2.21/configure.ac	2015-02-06 07:40:18.000000000 +0100
++++ glibc-2.21/configure.ac	2015-05-10 05:28:57.556525668 +0200
+@@ -54,7 +54,7 @@
+ AC_PROG_CXX
+ AC_CHECK_TOOL(READELF, readelf, false)
+ 
+-if test "`cd $srcdir; /bin/pwd`" = "`/bin/pwd`"; then
++if test "`cd $srcdir; pwd`" = "`pwd`"; then
+   AC_MSG_ERROR([you must configure in a separate build directory])
+ fi
+ 
